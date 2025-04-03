@@ -8,27 +8,23 @@ import FormControl from '@mui/material/FormControl';
 import FormLabel from '@mui/material/FormLabel';
 
 function SelectColor(){
-    let [ClipOn, setClipOn] = useState('')
-    function select(){
-        switch(select){
-            case 'clip-on_blackBtn':
-                ClipOn = setClipOn('black');
-            case 'clip-on_greenBtn':
-                ClipOn = setClipOn('black');
-        }
-    }
+    let [colorClipOn, setColorClipOn] = useState('Black')
+
     return (
     <>
+        <ImageChange clipOnColor={colorClipOn} />
         <FormControl>
-        <FormLabel id="demo-radio-buttons-group-label">Clip-On {}</FormLabel>
+        <FormLabel id="demo-radio-buttons-group-label">Clip-On : {colorClipOn}</FormLabel>
         <RadioGroup
             aria-labelledby="demo-radio-buttons-group-label"
             defaultValue="black"
             name="radio-buttons-group"
         >
-            <FormControlLabel value="black" control={<Radio />} label="Black" />
-            <FormControlLabel value="green" control={<Radio />} label="Green" />
-            <FormControlLabel value="gold" control={<Radio />} label="Gold" />
+            <FormControlLabel value="Black" control={<Radio />} label="Black" name="clip-on" checked={colorClipOn === 'Black'} onChange={(e)=>{setColorClipOn(e.target.value)}} />
+            <FormControlLabel value="Green" control={<Radio />} label="Green" name="clip-on" checked={colorClipOn === 'Green'} onChange={(e)=>{setColorClipOn(e.target.value)}} />
+            <FormControlLabel value="LightBrown" control={<Radio />} label="LightBrown" name="clip-on" checked={colorClipOn === 'LightBrown'} onChange={(e)=>{setColorClipOn(e.target.value)}} />
+            <FormControlLabel value="White" control={<Radio />} label="White" name="clip-on" checked={colorClipOn === 'White'} onChange={(e)=>{setColorClipOn(e.target.value)}} />
+
         </RadioGroup>
         </FormControl>
     </>

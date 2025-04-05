@@ -1,12 +1,11 @@
 import './App.css'
-import { Link } from 'react-router-dom'
 import Navbar from './pages/layout/LayoutNavBar'
-import Home from './pages/Home'
+import Prototype from './pages/Prototype'
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <Prototype />
     </>
   )
 }
